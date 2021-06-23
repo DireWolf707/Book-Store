@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'accounts',
     'pages',
+    'books',
 
     'crispy_forms',
 
