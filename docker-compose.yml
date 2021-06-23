@@ -12,7 +12,7 @@ services:
   web:
     build: .
     command: bash -c "python manage.py wait_for_db &&
-                      python manage.py runserver 0.0.0.0:8000"
+                      gunicorn backend.wsgi -b 0.0.0.0:8000"
     volumes:
       - .:/code
     environment:
@@ -20,6 +20,8 @@ services:
       - DB_NAME=postgres
       - DB_USER=postgres
       - DB_PASSWORD=postgres
+      - SECRET_KEY=#+13bmtdki!9sr%ax#oforl9r3vt2)!4(qbpi2*hj#7*0sn6sf
+      - DEBUG=False
     ports:
       - "8000:8000"
     depends_on:
