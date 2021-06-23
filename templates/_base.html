@@ -24,14 +24,14 @@
           Hi {{user.username}}
           </span>
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Password change</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'account_change_password' %}">Password change</a>
           </li>
           <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
           </li>
           {% else %}
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Password reset</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'account_reset_password' %}">Password reset</a>
           </li>
           <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'account_login' %}">Login</a>
